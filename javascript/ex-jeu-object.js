@@ -24,8 +24,9 @@ const readline = require('readline');
 
 function Jeu(options = {}) {
   const min = options.min ?? 0;
+  // const min = options.min !== undefined ? options.min : 0;
   const max = options.max ?? 100;
-  this.rl = readline.createInterface({
+  this._rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
@@ -38,7 +39,7 @@ Jeu.prototype.jouer = function () {
     console.log('Vous avez déjà joué : ' + this.essais.join(' - '));
   }
 
-  this.rl.question('Quel est le nombre ? ', (answer) => {
+  this._rl.question('Quel est le nombre ? ', (answer) => {
 
     const entierSaisi = Number.parseInt(answer, 10);
 
@@ -57,7 +58,7 @@ Jeu.prototype.jouer = function () {
       this.jouer();
     } else {
       console.log('Gagné');
-      this.rl.close();
+      this._rl.close();
     }
   });
 }

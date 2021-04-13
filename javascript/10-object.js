@@ -188,3 +188,22 @@ for (const k of Object.keys(eric)) {
 }
 
 
+// Créer une propriété non-énumérable
+// - pas dans la boucle for in
+// - pas en JSON
+// - pas dans des conversions type Object.keys
+const contact = {
+  name: 'Romain',
+};
+
+// contact.done = true;
+Object.defineProperty(contact, 'done', {
+  value: true,
+  // enumerable: false,
+  // writable: false,
+  // configurable: false,
+});
+
+console.log(contact.done); // true
+console.log(JSON.stringify(contact)); // {"name":"Romain"}
+
