@@ -1,3 +1,5 @@
+'use strict';
+
 setTimeout(() => console.log('A'), 500);
 setTimeout(() => console.log('B'), 0);
 setTimeout(() => console.log('C'), 1000);
@@ -28,3 +30,4 @@ console.log('E');
 // File d'attente de timer (999ms): cbC
 // File d'attente de timer (1000ms): cbC
 
+// Jake Archibald: In the loop JSConf Asia 2018 (Youtube)

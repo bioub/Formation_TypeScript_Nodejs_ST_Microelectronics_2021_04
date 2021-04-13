@@ -1,3 +1,5 @@
+'use strict';
+
 const names = ['Jean', 'Eric', 'Romain'];
 
 /** @param {string} name */

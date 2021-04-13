@@ -1,3 +1,5 @@
+'use strict';
+
 function externe() {
   console.log('externe');
   function interne() {

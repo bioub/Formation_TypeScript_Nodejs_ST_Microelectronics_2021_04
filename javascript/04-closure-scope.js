@@ -1,3 +1,5 @@
+'use strict';
+
 globalThis.scopeGlobal = 'scopeGlobal';
 const scopeModule = 'scopeModule';
 

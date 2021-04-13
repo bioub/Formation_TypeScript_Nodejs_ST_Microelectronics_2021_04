@@ -1,3 +1,5 @@
+'use strict';
+
 // ES5 (2009)
 const names = ['Jean', 'Eric', 'Romain'];
 

@@ -1,9 +1,4 @@
-// function setTimeout(callback, delay) {
-//   // pause delay ms
-//   const debut = Date.now();
-//   while (debut + delay > Date.now()) {} // bloqué thread (MAUVAISE PRATIQUE)
-//   callback();
-// }
+'use strict';
 
 // for (var i = 0; i < 3; i++) {
 //   setTimeout(function() {
