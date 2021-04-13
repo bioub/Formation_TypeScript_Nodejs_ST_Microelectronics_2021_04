@@ -44,11 +44,17 @@ Math.random = backupRandom;
 const coords1 = {
   x: 1,
   y: 2,
+  // subXY: function() {
+  //   return this.x - this.y;
+  // }
 };
 
 const coords2 = {
   x: 3,
   y: 4,
+  // subXY: function() {
+  //   return this.x - this.y;
+  // }
 };
 
 globalThis.MyMath = {
@@ -94,3 +100,91 @@ console.log(jsonStr); // {"x":1,"y":2}
 
 const objFromJson = JSON.parse(jsonStr);
 console.log('objFromJson.x', objFromJson.x);
+
+// factory
+function coordsFactory(x, y, z = 0) {
+  return {
+    x: x,
+    y: y,
+    z: z,
+  }
+}
+
+const coordsA = coordsFactory(1, 2);
+const coordsB = coordsFactory(3, 4);
+
+function Contact(name) {
+  // if (name && name.length > 4) {
+  this.name = name;
+  // }
+  // this.hello = function() {
+  //   return 'Hello my name is ' + this.name;
+  // };
+}
+
+Contact.getClass = function() {
+  return 'Contact';
+};
+
+Contact.prototype.hello = function() {
+  return 'Hello my name is ' + this.name;
+};
+
+const romain = new Contact('Romain');
+const eric = new Contact('Eric');
+const jean = new Contact('Jean');
+
+console.log('typeof Contact', typeof Contact); // function
+console.log('typeof romain', typeof romain); // object
+console.log('romain.name', romain.name); // Romain
+delete romain.name;
+console.log('romain.name', romain.name); // undefined
+
+console.log('eric.hello()', eric.hello()); // Hello my name is Eric
+console.log('jean.hello()', jean.hello()); // Hello my name is Jean
+
+console.log('eric.hello === jean.hello', eric.hello === jean.hello); // true
+
+console.log('Contact.getClass()', Contact.getClass()); // Contact
+
+console.log('romain instanceof Contact', romain instanceof Contact); // true
+console.log('romain instanceof Object', romain instanceof Object); // true
+console.log('coords1 instanceof Object', coords1 instanceof Object); // true
+console.log('["abc"] instanceof Array', ['abc'] instanceof Array); // true
+console.log('["abc"] instanceof Object', ['abc'] instanceof Object); // true
+
+console.log('coordsFactory instanceof Function', coordsFactory instanceof Function); // true
+console.log('coordsFactory instanceof Object', coordsFactory instanceof Object); // true
+console.log('Contact instanceof Function', Contact instanceof Function); // true
+console.log('Contact instanceof Object', Contact instanceof Object); // true
+
+
+console.log(eric.name !== undefined); // true
+console.log(eric.hello !== undefined); // true
+console.log('name' in eric); // true
+console.log('hello' in eric); // true
+// la clé vient-elle de l'objet ou du prototype ?
+console.log(eric.hasOwnProperty('name')); // true
+console.log(eric.hasOwnProperty('hello')); // false
+
+console.log(eric.name); // la clé est dans l'objet
+console.log(eric.hello); // la clé est dans le prototype de la fonction constructeur Contact
+console.log(eric.hasOwnProperty); // la clé est dans le prototype de la fonction constructeur Object
+console.log(eric.dfjgndjkf); // undefined
+
+console.log(eric.propertyIsEnumerable('name')); // true
+console.log(Math.propertyIsEnumerable('PI')); // false
+
+// old school
+for (const k in eric) {
+  if (eric.hasOwnProperty(k)) {
+    console.log(k); // name
+  }
+}
+
+// new school
+for (const k of Object.keys(eric)) {
+  console.log(k); // name
+}
+
+
