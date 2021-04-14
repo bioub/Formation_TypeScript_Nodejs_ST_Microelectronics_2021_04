@@ -1,6 +1,6 @@
 'use strict';
 
-// importer la classe Jeu
+import Jeu from './jeu.mjs';
 
 const game = new Jeu();
 game.jouer();

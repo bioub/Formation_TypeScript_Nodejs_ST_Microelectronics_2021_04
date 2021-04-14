@@ -20,8 +20,7 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-// exporter les 4 fonctions
-exports.get = getRandom;
-exports.getArbitrary = getRandomArbitrary;
-exports.getInt = getRandomInt;
-exports.getIntInclusive = getRandomIntInclusive;
+export const get = getRandom;
+export const getArbitrary = getRandomArbitrary;
+export const getInt = getRandomInt;
+export const getIntInclusive = getRandomIntInclusive;
