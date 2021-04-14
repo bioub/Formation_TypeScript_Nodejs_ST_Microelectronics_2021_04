@@ -3,7 +3,7 @@
 setTimeout(() => console.log('A'), 500);
 setTimeout(() => console.log('B'), 0);
 setTimeout(() => console.log('C'), 1000);
-setTimeout(() => console.log('D'), 500);
+setTimeout((lettre) => console.log(lettre), 500, 'D');
 
 console.log('E');
 

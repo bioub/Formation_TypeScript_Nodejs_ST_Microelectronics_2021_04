@@ -65,3 +65,5 @@ Jeu.prototype.jouer = function () {
 
 const game = new Jeu();
 game.jouer();
+
+

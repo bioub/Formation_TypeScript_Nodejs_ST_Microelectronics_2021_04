@@ -1,3 +1,5 @@
+'use strict';
+
 const coords1 = {
   x: 1,
   y: 2,
@@ -11,7 +13,7 @@ coords2.z = 3;
 
 console.log(coords1.z); // 3
 
-console.log(coords1 === coords2);
+console.log(coords1 === coords2); // true
 
 const MyMath = Math;
 console.log(MyMath.PI); // 3.14
@@ -32,9 +34,9 @@ const cloneNbs = nbs.slice();
 const cloneNbs2015 = [...nbs];
 
 // string (objet immuable: une fois créé, ne peut plus être modifié)
-const name1 = "Romain";
+let name1 = "Romain";
 console.log(name1[0]); // R
-name1[0] = 'P'; // impossible car immuable
+// name1[0] = 'P'; // impossible car immuable
 
 const name2 = 'P' + name1.slice(1);
 

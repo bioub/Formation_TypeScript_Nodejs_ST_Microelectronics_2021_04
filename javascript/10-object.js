@@ -57,6 +57,7 @@ const coords2 = {
   // }
 };
 
+// global
 globalThis.MyMath = {
   sum: (a, b) => a + b,
   sub: (a, b) => a - b,
@@ -67,7 +68,7 @@ console.log(MyMath.sum(1, 2)); // 3
 
 // l'opérateur [] pour accéder aux clés
 console.log(coords1['x']); // 1
-console.log(MyMath['sum'](1, 2)); // 3
+console.log(MyMath['s'+'u'+'m'](1, 2)); // 3
 
 // à réserver à des cas dynamiques
 const key = 'x';
@@ -96,7 +97,7 @@ for (const k in Math) {
 
 // (ne fonctionne que sur clés énumérables)
 const jsonStr = JSON.stringify(coords1);
-console.log(jsonStr); // {"x":1,"y":2}
+console.log(jsonStr); // {"x":1,"y":2, "_comments": "mon commentaire"}
 
 const objFromJson = JSON.parse(jsonStr);
 console.log('objFromJson.x', objFromJson.x);
