@@ -1,3 +1,13 @@
 {
-  "main": "launch-game.js"
+  "main": "launch-game.js",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  },
+  "scripts": {
+    "test": "node commonjs/run-tests.js",
+    "lint:js": "eslint exercice-commonjs"
+  }
 }

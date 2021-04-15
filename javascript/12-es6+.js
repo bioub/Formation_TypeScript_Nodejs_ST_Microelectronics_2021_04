@@ -32,7 +32,7 @@ const lien = `<a href="${url}">${title}</a>`;
 //   };
 // };
 
-const coordsFactory = (x, y, z = 0) => ({x: x, y: y, z: z})
+const coordsFactory = (x, y, z = 0) => ({x, y, z});
 
 const names = ['Jean', 'Eric', 'Romain'];
 

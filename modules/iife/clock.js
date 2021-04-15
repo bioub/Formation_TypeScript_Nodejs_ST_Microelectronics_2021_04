@@ -19,6 +19,7 @@
     }
   }
 
+  // créé une variable global
   globalThis.Clock = Clock;
 
 })();
