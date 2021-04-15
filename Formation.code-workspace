@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "javascript"
+		},
+		{
+			"path": "modules"
+		},
+		{
+			"path": "mdn-random"
+		},
+		{
+			"path": "typescript"
+		}
+	],
+	"settings": {}
+}
