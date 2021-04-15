@@ -1,5 +1,5 @@
 {
-  "name": "mdn-random",
+  "name": "mdn-random-verdaccio",
   "version": "1.0.0",
   "description": "Random functions provided on the Math.random() page on MDN",
   "main": "index.js",
@@ -11,5 +11,8 @@
     "mdn"
   ],
   "author": "MDN",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  }
 }

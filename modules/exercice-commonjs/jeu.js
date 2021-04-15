@@ -1,6 +1,6 @@
 'use strict';
 
-const Random = require('./random');
+const Random = require('mdn-random');
 const readline = require('readline');
 
 class Jeu {
