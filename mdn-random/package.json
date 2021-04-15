@@ -1,0 +1,15 @@
+{
+  "name": "mdn-random",
+  "version": "1.0.0",
+  "description": "Random functions provided on the Math.random() page on MDN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "mdn"
+  ],
+  "author": "MDN",
+  "license": "MIT"
+}

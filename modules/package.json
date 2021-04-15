@@ -7,7 +7,8 @@
     "eslint": "^7.24.0"
   },
   "scripts": {
+    "clear:build": "rimraf build/*",
     "test": "node commonjs/run-tests.js",
-    "lint:js": "eslint exercice-commonjs"
+    "lint:js": "eslint \"exercice-commonjs/**/*.js\" --fix"
   }
 }
