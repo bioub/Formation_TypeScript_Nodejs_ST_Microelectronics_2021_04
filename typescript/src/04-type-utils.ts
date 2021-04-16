@@ -7,6 +7,7 @@ interface ContactInterface extends Entity {
   birthdate: Date;
 }
 
+// https://www.typescriptlang.org/docs/handbook/utility-types.html
 type ContactWithoutId = Omit<ContactInterface, 'id'>;
 
 class Contact implements ContactWithoutId {

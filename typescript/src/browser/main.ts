@@ -1,4 +1,6 @@
-const divEl: HTMLDivElement = document.querySelector('.clock');
+import { Clock } from './clock';
 
-const clock = new Clock(divEl);
+const divEl = document.querySelector('.clock');
+
+const clock = new Clock(divEl as HTMLDivElement);
 clock.start();

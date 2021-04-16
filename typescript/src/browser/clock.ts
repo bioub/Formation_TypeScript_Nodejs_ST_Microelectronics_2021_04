@@ -16,3 +16,5 @@ class Clock {
     }, REFRESH_DELAY);
   }
 }
+
+export { Clock };

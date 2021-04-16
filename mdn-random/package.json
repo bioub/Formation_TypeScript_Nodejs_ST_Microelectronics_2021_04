@@ -10,6 +10,9 @@
     "random",
     "mdn"
   ],
+  "files": [
+    "index.js"
+  ],
   "author": "MDN",
   "license": "MIT",
   "devDependencies": {
