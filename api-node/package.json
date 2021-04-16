@@ -7,8 +7,7 @@
   },
   "scripts": {
     "build:ts": "tsc",
-    "watch:ts": "tsc -w",
-    "build:prod": "export NODE_ENV=production && "
+    "watch:ts": "tsc -w"
   },
   "dependencies": {
     "minimist": "^1.2.5"
