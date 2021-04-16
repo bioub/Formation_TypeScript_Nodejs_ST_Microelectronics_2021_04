@@ -1,25 +1,31 @@
-'use strict';
+import { getRandomInt } from 'mdn-random';
+import { createInterface } from 'readline';
 
-const Random = require('./random');
-const readline = require('readline');
+interface JeuOptions {
+  min?: number;
+  max?: number;
+}
 
-class Jeu {
-  constructor(options = {}) {
+export class Jeu {
+  private rl = createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  entierAlea: number;
+  essais: number[] = [];
+
+  constructor(options: JeuOptions = {}) {
     const { min = 0, max = 100 } = options;
-    this._rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout,
-    });
-    this.entierAlea = Random.getInt(min, max);
-    this.essais = [];
+
+    this.entierAlea = getRandomInt(min, max);
   }
   jouer() {
     if (this.essais.length) {
       console.log(`Vous avez déjà joué : ${this.essais.join(' - ')} !!!`);
     }
 
-    this._rl.question('Quel est le nombre ? ', (answer) => {
-
+    this.rl.question('Quel est le nombre ? ', (answer) => {
       const entierSaisi = Number.parseInt(answer, 10);
 
       if (Number.isNaN(entierSaisi)) {
@@ -37,10 +43,10 @@ class Jeu {
         this.jouer();
       } else {
         console.log('Gagné');
-        this._rl.close();
+        this.rl.close();
       }
     });
   }
 }
 
-module.exports = Jeu;
+// export { Jeu };
