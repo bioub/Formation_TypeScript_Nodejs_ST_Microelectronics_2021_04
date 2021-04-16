@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "async"
+		},
+		{
+			"path": "Exercice-Build"
 		}
 	],
 	"settings": {}
